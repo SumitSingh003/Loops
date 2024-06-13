@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
+
+contract Loops{
+    //simple computation but with 1000 iterations
+    uint public sum;
+    function simple() public{
+        uint add = 0;
+        for(uint i = 1; i <=1000; i++) 
+        {
+            add += i; 
+        }
+
+        sum = add;
+    }
+
+    //complex computation with less iterations (only 100)
+    int[] public fibonacci;
+
+    function complex() public 
+    {
+        fibonacci.push(0);
+        fibonacci.push(1);
+        for(uint j = 2; j < 100; j++)
+        {
+            fibonacci.push(fibonacci[j-1] + fibonacci[j-2]);
+        }
+    } 
+}
